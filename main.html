@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<br lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Product Card</title>
+		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+		<h1>
+			Basic Security Testing with Kali Linux
+		</h1>
+		<h2>
+			Table of Contents
+		</h2>
+		<h3>Chapter 1 - Introduction</h3>
+		<br>
+			What is Kali?
+		</br>
+		<br> 
+
+		</br>
+		<br> 
+
+		</br>
+		<br> 
+
+		
+		<div>
+			<h2>
+				Chapter 1 - Introduction
+			</h2>
+			<h3>What is Kali?</h3>
+			<p>
+				Kali is the latest and greatest version of the ever popular Backtrack Linux penetration testing
+				distribution. The creators of the Backtrack series kept Kali in a format very similar to Backtrack, so
+				anyone familiar with the older Backtrack platform will feel right at home.
+				Kali has been re-vamped from the ground up to be the best and most feature rich Ethical Hacking/
+				Pentesting distribution available. Kali also runs on more hardware devices greatly increasing your
+				options for computer security penetration testing or “pentesting” systems.
+				If you are coming to Kali from a Backtrack background, after a short familiarization period you
+				should find that everything is very similar and your comfort level should grow very quickly.
+				If you are new to Kali, once you get used to it, you will find an easy to use security testing platform
+				that includes hundreds of useful and powerful tools to test and help secure your network systems.
+			</p>
+			<h3>
+				Why Use Kali?
+			</h3>
+			<p>
+				Kali includes over 300 security testing tools. A lot of the redundant tools from Backtrack have been
+removed and the tool interface streamlined. You can now get to the most used tools quickly as they
+appear in a top ten security tool menu. You can also find these same tools and a plethora of others all
+neatly categorized in the menu system. 
+Kali allows you to use similar tools and techniques that a hacker would use to test the security of your
+network so you can find and correct these issues before a real hacker finds them.Hackers usually perform a combination of steps when attacking
+a network. These steps are summarized below:
+Recon – Checking out the target using multiple sources –
+like intelligence gathering.
+Scanning – Mapping out and investigating your network.
+Exploitation – Attacking holes found during the scanning
+process.
+Elevation of Privileges – Elevating a lower access
+account to Root, or System Level.
+Maintaining Access – Using techniques like backdoors to
+keep access to your network.
+Covering their Tracks – Erasing logs, and manipulating
+files to hide the intrusion.
+An Ethical Hacker or Penetration Tester (good guys hired to
+find the holes before an attacker does) mimics many of these
+techniques, using parameters and guidelines set up with
+corporate management, to find security issues.
+They then report their findings to management and assist in
+correcting the issues.
+We will not be covering every step in the process, but will
+show you many of the techniques that are used, and how to
+defend against them.
+I would think the biggest drive to use Kali over commercial security solutions is the price. Security
+testing tools can be extremely costly, Kali is free! Secondly, Kali includes open source versions of
+numerous commercial security products, so you could conceivably replace costly programs by simply
+using Kali.
+All though Kali does includes several free versions of popular software programs that can be
+upgraded to the full featured paid versions and used directly through Kali.
+There really are no major tool usage differences between Backtrack and Kali. Kali is basically
+Backtrack version 6, or the latest version of Backtrack. But it has been completely retooled from the
+ground up, making software updates and additions much easier.
+In Backtrack updating some programs seemed to break others, in Kali, you update everything using the
+Kali update command which keeps system integrity much better.
+Simply update Kali and it will pull down the latest versions of the included tools for you. Just a note
+of caution, updating tools individually could break Kali, so running the Kali update is always the best
+way to get the latest packages for the OS.
+I must admit though, some tools that I liked in the original Backtrack are missing in Kali. It is not too
+big of a deal as another tool in Kali most likely does the same or similar thing. And then again you
+can install other programs you like if needed.
+In addition to stand alone and virtual machine instances of Kali, I also use Kali on a Raspberry Pi - a
+mini credit card sized ARM based computer. With Kali, you can do almost everything on a Pi that you
+could do on a full sized system. In my book I will cover using the PI as a security testing platform
+including testing Wireless networks.
+Testing networks with a computer you could fit in your pocket, how cool is that?
+Though Kali can’t possibly contain all the possible security tools that every individual would prefer,
+it contains enough that Kali could be used from beginning to end. Don’t forget that Kali is not just a
+security tool, but a full-fledged Linux Operating System. So if your favorite tool runs under Linux, but
+is not included, most likely you can install and run it in Kali.
+			</p>
+			<h3>
+				Ethical Hacking Issues
+			</h3>
+			<p>
+				Using Ethical Hacking a security tester basically acts like a hacker. He uses tools and techniques that
+a hacker would most likely use to test a target network’s security. The difference is, the penetration
+tester is hired by the company to test its security and when done reveals to the leadership team how
+they got in and what they can do to plug the holes.
+The biggest issue I see in using these techniques is ethics and law. Some security testing techniques
+that you can perform with Kali and its included tools are actually illegal to do in some areas. So it is
+important that users check their local, State and Federal laws before using Kali.
+Also, you may have some users that try to use Kali, a very powerful set of tools, on a network that
+they do not have permission to do so. Or they will try to use a technique they learned but may have not
+mastered on a production network.
+All of these are potential legal and ethical issues
+			</p>
+			<h3>
+				Scope of this Book
+			</h3>
+			<p>
+				This book focuses on those with beginning to intermediate experience with Backtrack/ Kali. I think it
+would also be a good tool for network administrators and non-security IT professionals that are
+looking to get into the field.
+We will cover everything from a basic overview of Kali to using the included tools to test security on
+Windows and Linux based systems. We will cover Social Engineering, Wi-Fi security, using Kali on
+a Raspberry Pi, exploiting passwords, basic computer security testing from reconnaissance to finding
+& using exploits, and finally securing your systems
+			</p>
+			<h3>
+				Why did I write this book?
+			</h3>
+			<p>
+				I have written technical articles on Backtrack for several years now, and have helped out with
+				multiple Backtrack/ Kali books and training series. I get a lot of questions on how to use Kali/
+				Backtrack, so I decided that it was time to write my own beginners guide book.
+				My other reason for writing this book is to help get young people interested in the field of computer
+				security. The US is currently facing a crisis when it comes to young professionals choosing technical
+				careers and the cyber security field is no different.
+				The US government is in need of thousands1
+				 of cyber warriors and some industry experts have even
+				suggested that the US consider hiring security experts2
+				 from other countries to fill in the gap.
+				Think about that for a minute.
+				The numbers game is against us also. The US is the number two user of the internet, with 81% of our
+				population connected. Now consider the fact that China is in the number one spot3
+				 with almost double
+				the amount of users. And their connected rate is only at about 41%!
+				Though many think that the US is ranked number one in cyber offense capabilities, our defense is not
+				ranked that well. With foreign countries making marked advances in cyber security the US needs to
+				get as many brilliant young people into the field as possible, and they need to do it sooner rather than
+				later.
+
+			</p>
+			<h3>
+				Disclaimer
+			</h3>
+			<p>
+Never try to gain access to or security test a network or computer that you do not have written
+permission to do so. Doing so could leave you facing legal prosecution and you could end up in jail.
+The information in this book is for educational purposes only.
+There are many issues and technologies that you would run into in a live environment that are not
+covered. This book only demonstrates some of the most basic tool usage in Kali and should not be
+considered as an all-inclusive manual to Ethical hacking or pentesting.
+I did not create any of the tools in Kali nor am I a representative of Kali Linux or Offensive Security.
+Any errors, mistakes, or tutorial goofs in this book are solely mine and should not reflect on the tool
+creators, please let me know where I screwed up so it can be corrected. 
+Though not mentioned by name, thank you to the Kali developers for creating a spectacular product
+and thanks to the individual tool creators, you are all doing an amazing job and are helping secure
+systems worldwide!
+			</p>
+			<h3>
+				References
+			</h3>
+			<p>
+1. http://www.csmonitor.com/USA/Military/2011/0509/What-US-cybersecurity-needs-a-few-more-good-guys
+2. http://www.theguardian.com/technology/2012/jul/10/us-master-hackers-al-qaida
+3. http://en.wikipedia.org/wiki/List_of_countries_by_number_of_Internet_users
+			</p>
+			<h2>Part 1: Installing and Basic Overview</h2>
+			<h3>
+				Introduction
+			</h3>
+			<p>
+In this section we will setup Kali Linux, Windows 7 and Metasploitable 2 as Virtual Machines
+(VMs) using VMWare Player on a host computer.
+Setting up our testing lab using virtual machines makes it very easy to learn offensive computer
+security testing using Kali.
+Virtual machines make it possible to run several operating systems on a single computer. That way
+we do not need a room full of computers to set up a testing and learning environment. We only need
+one machine powerful enough to run several Virtual Machine sessions at once.
+For the book I used a Windows 7 Core I-5 system with 8 GB of RAM. It had plenty of power to run
+all three of our lab operating systems at the same time with no problem at all.
+If you have experience with Virtual Systems, you can use any Virtual Machine software that you want.
+But for this tutorial I will be using VMWare Player as the host software, and then install Kali,
+Metasploitable 2 and Windows 7 in separate VMs running under the host.
+When done, you should have a small test network that looks something like this:
+			</p>
+			<h3>
+
+			</h3>
+			<p>
+
+			</p>
+			<h3>
+
+			</h3>
+			<p>
+				
+			</p>
+			<h3>
+
+			</h3>
+			<p>
+				
+			</p>
+			<h3>
+
+			</h3>
+			<p>
+				
+			</p>
+			<h3>
+				Description
+			</h3>
+			<p>
+Kali Linux is one of the many programs out there that helps us in the
+constant fight—it could even be called a war—with malicious hackers. To
+fully use all the advantages it offers, we could spend years in training and
+development, but with a little research, anyone can learn just the basics of
+cybersecurity. The first step is always smart clicking, updating software,
+and staying educated on security awareness. Once you are fully aware of
+how essential cyber-security is, you can start making your personal and
+company data less accessible to one of the many scams, viruses, and
+dangers in the internet world. 
+Understanding VPNs, malware, and firewalls can drastically improve the
+chances of your business surviving in the ever-changing online world.
+Today, cybersecurity causes trillions of dollars in revenue loss, and
+preventing malicious attacks could mean the difference between your
+company becoming one of the sad statistics or overcoming, adapting, and
+rising stronger after being hacked. 
+This guide will focus on the following:
+Hacking Basics
+Getting Started
+Obtaining Passwords
+The Hacking Guide
+Mobile Hacking
+Penetration Testing Basics
+Spoofing Techniques
+Some of The Basic Functions of Linux
+Taking Command and Control
+Learning the Essential Hacking Command Line
+Follow-Up… AND MORE!!!
+			</p>
+			<h3>
+				Introduction
+			</h3>
+			<p>
+Kali Linux is a very advanced flavor of Linux, which is used for Security
+Auditing and Penetration Testing. After all the tools that we have looked at,
+it is pretty clear that if you want to succeed in the domain of Security
+Research, Kali Linux will provide with unlimited power to achieve the
+same. It is also clear that if you are just beginning with Linux, Kali Linux is
+not the place that you would want to start with as it is a highly complex
+operating system created and aimed at achieving one goal and that is
+security.  
+This book discusses the different "hats" of hacking - the black, the white,
+and the grey. The black hat is the stereotypical idea of how most in society
+conceive hackers to be - the one who wants unauthorized access to the
+property or information of another. The white hat is the "good guy" - the
+one learning the tricks of the trade in order to prevent the exploitation of
+assets or track down offenders. The grey hat is a bit of a hybrid, they use
+their hacking skills (although without the prior knowledge or authorization
+of the owners) to expose weaknesses in systems so that those systems can
+be strengthened. Regardless of the motivations of any individuals, the
+knowledge base and general toolkit remain the same. Hacking requires an
+understanding of how computing equipment communicates on various
+levels, what vulnerabilities lie in both machines and networks, and how
+those vulnerabilities are exploited. This knowledge takes time, practice,
+study, and discipline to attain, and it is not something that everyday people
+are familiar with. As a result, skilled hackers have the ability to either inflict
+or prevent quite a bit of damage on individuals, organizations, and society. 
+Each hacker should thus adopt some code of ethics to guide them. Even
+black hats will have some line that they will not cross in carrying out their
+attacks. Law enforcement is becoming very serious about information
+security and preventing pervasive attacks on individual identities, on
+commerce, and on government institutions. Laws and enforcement vary by
+location, but any hacker - black, white, or grey - should have a full
+understanding of the risks they are taking. This is especially true of
+beginning hackers who don't have the experience to either hide their tracks
+or to prevent collateral damage. An attack that is conducted improperly
+could erase or corrupt information, or cause other unintended consequences.
+That is why it is important to practice skills on one's on systems in an
+isolated "sandbox" until gaining enough confidence to attack another
+system.  
+Maintaining the Hacker’s Edge 
+There is a perpetual race going on between the hacker community and the
+information security community. When vulnerability is discovered, it tends
+to spread wisely and rapidly as evidenced by the WPA Krack attack
+described in Chapter X. Security personnel try to keep up by constantly
+making patches or upgrades to protect systems. Hackers must constantly
+hone their craft and push limits in order to maintain an edge. Like any skill,
+hacker skills dwindle if not in regular use. Furthermore, the landscape in
+computer security is in constant flux. The open source nature of most
+hacking tools means that there are frequent changes in functionality and
+syntax that must be kept up with. Vulnerabilities are published and patched
+on a near daily basis, and encryption standards are being pushed very hard
+to provide better security against attacks. So to maintain an edge and to
+have a reasonable chance of becoming a successful hacker, one should do
+the following: 
+1. Maintain current versions of all operating systems, scripts, tools, and
+programming environments 
+2. Practice skills on a regular basis, on a sandboxed environment, with
+emphasis on improving both speed and anonymity 
+3. Periodically probe their own system and adopt the appropriate security
+measures 
+4. Have a daily or weekly reading cycle on both offensive and defensive
+security developments (magazines, journals, web articles, message boards,
+dark web hacker communities, etc.)
+			</p>
+			<h3>
+				Chapter 1 Hacking Basics
+			</h3>
+			<p>
+Now that you are a bit more familiar with ethical hacking and the
+importance of cyberlaw, we can continue to discuss the basics that you are
+required to understand in order to build a solid foundation.
+In this chapter we will focus on the terminology used by cyber-security
+specialists and hackers, because you will encounter them frequently within
+this book, and communication is key to a successful project. Once you are
+familiar with the professional terminology, we will move on to a more
+detailed discussion about penetration testing and the methodology behind
+writing reports.
+			</p>
+			<h3>
+
+			</h3>
+			<p>
+				In this section, we will explore briefly the most important and frequently
+encountered terms in the cyber-security sector. You will also find this list of
+terms handy as you progress through the chapters.
+1. Asset : Assets refer to any devices or components that are
+used in any activities that involve the handling of data and
+information. An asset needs to be secured from unauthorized
+access in order to protect it from unwanted data manipulation.
+2. Exploit : This can be a program, a bug, or even a command
+used by attackers to find access to the data or information they
+seek within the system. An exploit can be anything that takes
+advantage of a specific vulnerability within an application or
+operating system. It will cause an unanticipated behavior to
+the asset, and this will create a gap that can be used by the
+hacker to their advantage.
+3. Pre-engagement :. Pre-engagement refers to the phase of
+preparation where you establish the rules of engagement.
+4. Milestone : Being organized is a crucial aspect of being a
+professional ethical hacker. This is where milestones come in.
+They are used to split the process into stages that are clearly
+detailed and assigned to a beginning and an end date. You can
+use charts, spreadsheets and various scheduling websites in
+order to keep track of your milestones and make sure to
+deliver on time.
+5. Bot : This is a type of program that is used to automate a
+certain action. Humans can only work so fast, but bots can
+take care of repetitive tasks much faster and for as long as
+needed.
+6. Brute force attack : This kind of attack is the simplest, most
+common type and it doesn’t involve smashing computers to
+bits as the name might suggest. A brute force attack is in fact
+an automated method of combining usernames with
+passwords until the correct combination is found. The entire
+process is automatic, but it can take a lot of time due to a high
+number of possible combinations.
+7. Denial of Service attack : Also known as a DoS attack, this
+is one of the most commonly encountered attacks used by
+many beginner black hat hackers. This attack comes as a form
+of interruption to the server or network service provided to
+various users. It’s a malicious method of denying users
+connection to an online service. For instance, if you are
+playing an online game, a DoS attack against the game servers
+will cause a mass disconnection to all users.
+8. Keystroke logging : This is a common way of recording the
+keyboard keys and mouse buttons that are pressed on a
+computer. The information is used to reveal usernames,
+passwords, and other sensitive information. Unlike a brute
+force attack, this method is much quicker when it comes to
+finding out logging information. For it to work, a keylogger is
+injected onto the computer either through an email with a
+Trojan containing link or even directly through a USB stick.
+9. Malware : This refers to all malicious programs that are
+used in hostile actions against a computer or specific
+software. Malware comes in the form of Trojans, worms,
+adware, spyware, ransomware, and other computer viruses.
+10.                     Phishing : This is a type of email fraud. The
+intention is to send a seemingly legitimate email with the purpose of
+gaining private information from the recipient.
+11.                     Rootkit : This is software that operates stealthily
+without the knowledge of the targeted user. Its purpose is to hide
+various processes that are running in the background in order to
+maintain access to the computer. It is mostly used to maintain a
+back door to someone’s device while also hiding it from the
+authorized user.
+12.                     SQL Injection : Another common method used
+by black hat hackers to obtain data. This method involves the
+injection of SQL code to any data driven software or application.
+For example, this can be a statement which tells the application to
+send all of its data to the attacker.
+There are many other terms that you will discover as you learn more about
+hacking. But for now, this terminology is enough for you to gain a glimpse
+of what you will be dealing with.
+			</p>
+			<h3>
+				Penetration Testing
+			</h3>
+			<p>
+This process cannot be avoided, because it is the only way to truly discover
+exploitable gaps within a system, and therefore you need to familiarize
+yourself with each step that you need to take. Keep in mind, however, that
+your motivation for the testing is driven by the client and the specific goals
+he or she wants to achieve.
+Before you begin, you first need to establish the rules of engagement. You
+need to set a schedule, discuss each stage of the testing as well as the
+methodology, and establish the legal responsibilities. Clearly defining the
+penetration test will smoothen the process, keep the client informed, and
+protect you from any liabilities. Everything needs to be agreed upon by both
+parties involved, so let’s take a look at how this process might look.
+Rules of Engagement
+1. Before anything else, the hacker and their client need to
+sign a nondisclosure agreement as well as permission for
+hacking. As a cyber-security specialist, you want to be legally
+protected from any kind of liability, so never start doing
+anything before the necessary documents are clear to both
+sides and signed.
+2. The next step is discussing the precise purpose of the
+penetration test, as well as what needs to be tested. Sometimes
+you will need to test only a certain sector of an organization,
+and you also need to know what kind of result is expected
+from you.
+3. Once you establish the goals and the testing duration, you
+should discuss the methodology you will use to perform the
+test. There should also be a mention of any techniques the
+client doesn’t want to be used. For instance, some
+organizations or business do not want the hacker to simulate a
+denial of service attack. This needs to be specified when
+establishing the rules, otherwise it can lead to confusion,
+delays, and even legal problems.
+4. The final rule of engagement which is as important as all
+the rest is deciding on the liabilities and responsibilities of
+both parties. As an ethical hacker, you might access some
+sensitive information such as company trade secrets, bank
+account details, or you might cause a denial of service.
+			</p>
+			<h3>
+				Penetration Testing in Steps
+
+			</h3>
+			<p>
+Once the rules of engagement are well established and agreed to by
+everyone involved, it’s time to perform the test itself. There are various
+testing methodologies and categories, but for now you should learn the
+basic stages of penetration testing. Knowing the steps and working through
+them one at a time will make your job much easier, so let’s see how a basic
+penetration test looks.
+1. Passive Scanning : In this phase, you are supposed to
+gather information about your target without actually
+interacting with it directly. Passive scanning is performed by
+going through social networking websites, online databases,
+and even by searching for relevant data on a search engine
+like Google.
+2. Active Scanning : The next step is to probe the target with
+the use of specialized tools that are designed for network
+mapping, sniffing traffic, banner grabbing and more.
+3. Fingerprinting : This does not refer to actual physical
+fingerprinting. At this stage, the penetration tester needs to
+identify the target’s operating system and version level, all
+applications and their patch level, any open ports, active user
+accounts and services.
+4. Target Identification : In this phase, once the tester has
+obtained all the relevant information about the system, the
+most useful or vulnerable target is chosen.
+5. Vulnerability Exploiting : This is basically the attack itself.
+Specialized attack tools are used against the most vulnerable
+targets within the system. Some of them will succeed, while
+some of them will only kill the server or simply not work at
+all.
+6. Privilege Escalation : The tester needs to gain more
+control, as if they are the authorized user. The purpose of this
+stage is to gain administrative access to the system, whether
+it’s local or remote.
+7. Reporting : This is the final step of the penetration test. The
+ethical hacker needs to document and report every aspect of
+the test. This includes the tools used, exploited vulnerabilities,
+and everything that was found as well as how it was found.
+There are other aspects to a penetration test, but for now we will stick to the
+basics, as the purpose of this chapter is to familiarize you with the world of
+hacking and penetration testing.
+			</p>
+			<h3>
+				Penetration Testing by an Unethical Hacker
+
+			</h3>
+			<p>
+For this reason, we will take a look at a penetration test from the black hat’s
+perspective and see how it differs from the basic ethical test.
+1. Choosing a Target : The unethical hacker chooses the target
+out of a grudge, for profit, or simply for fun. There are no
+rules and regulations involved. Everything is done for
+personal reasons.
+2. The Intermediary : The attack itself is never directly done
+from the hacker’s own system. An intermediary system is
+used so that the attack cannot be traced back to the attacker.
+The intermediary is often a victim that is used remotely to
+gain access to the target’s system.
+3. Basic Test Phases :. Even the tools and procedures will be
+the same as those used by a cyber-security specialist.
+4. Maintaining Access : It is common for hackers to create a
+back door on their victim’s system in case they might want
+quick access in the future. This is done by installing rootkits
+or leaving bots behind to maintain the access.
+How the unethical hacker uses the system depends entirely on their
+intentions. Some aim to acquire personal information, while others attempt
+to extort companies with flaws in their security. The only thing that really
+separates the unethical hacker from the ethical one is the goal. The steps
+and tools they use to achieve that goal are usually the same.
+Penetration Testing Methodologies
+Once the rules of engagement are clearly defined, it’s time to consider the
+methodology. There is no universal kind of test that can fit every company
+or organization. Everyone has their own set of security goals, and there are
+many questions that need answering before choosing the correct
+methodology. There are a few different kinds of penetration testing
+methodologies, and each one of them dictates how a test should be
+performed. Here’s a brief explanation of the most common methodologies:
+1. OSSTMM : This stands for “Open Source Security Testing
+Methodology Manual,” and it is a standardized methodology
+for penetration testing. The idea behind it is to guarantee a
+baseline for the testing no matter which security specialist or
+company performs it. This methodology mandates which
+parts of a network to test, how to perform the test, and how to
+analyze the resulting data. Penetration tests following the
+OSSTMM methodology are thorough, but cumbersome
+because they include nearly all the steps of a penetration test.
+This means that such a test cannot be performed on a daily
+basis without requiring an adequate amount of human
+resources and a budget to match.
+2. OWASP : This stands for “Open Web Application Security
+Project,” and as the name suggests, it is an open source,
+community driven methodology aimed at testing web
+applications specifically. The purpose of this methodology is
+to provide unbiased data that is not influenced by any
+commercial or governmental entity. While OSSTMM is more
+focused on network security, OWASP focuses on improving
+the security of web applications as well as services. For this
+methodology, there are various tools developed that software
+developers, security analysts, and businesses alike can use in
+order to boost their defenses.
+3. CHECK : This penetration test methodology was born out
+of the need to create secure governmental networks.
+Governments handle extremely sensitive information that is
+often classified, therefore a high level of consistent testing is
+required to guarantee security. The CHECK methodology
+focuses mainly on protecting the data stored on a specific
+server. The penetration tests performed under it are used to
+determine how secure the data is, and in what way could it be
+compromised when under attack.
+4. NIST : This is a comprehensive penetration testing
+methodology that, unlike OSSTMM, can be applied regularly
+and in short intervals. There are four main steps to NIST,
+which are planning, discovery, attacking, and reporting. The
+discovery phased is then broken down into two segments. One
+involves basic information gathering, network scans, and
+service detection, and the other is all about the vulnerability
+assessment. The third stage is the attack, which is the main
+step in the test. The purpose is to try and compromise the
+targeted device. The reporting phase comes after discovery, as
+well as attack.
+			</p>
+			<h3>
+				Penetration Test Categories
+
+			</h3>
+			<p>
+Depending on what a company or organization wants to test, there are three
+penetration test categories, namely White Box, Black Box, and Gray Box.
+1. White Box : When all the relevant data on the target is
+already provided, the penetration test is considered white box.
+If we’re dealing with a network test, the data includes
+information on applications and their versions, as well as the
+operating system. In the case of a web application, the tester
+will receive the source code in order to perform a full
+analysis. This type of testing with so much information given
+upfront is usually performed only onsite.
+2. Black Box : As you might’ve figured it out on your own,
+this is the opposite of a white box penetration test. There is no
+information offered upfront regarding the operating system or
+applications when it comes to network testing. Only IP ranges
+are provided so that testing can be performed. The source
+code for web application testing is not given either. Black box
+penetration testing is usually performed externally, and that is
+why most information is kept away. 3. Gray Box : This penetration test category is somewhere in￾between white and black box testing. Some data is provided,
+while some is kept away from the tester. For example, for web
+applications the source code is not provided, however,
+information on the databases, back end server or test accounts
+is usually given.
+Writing Reports
+A successful penetration test is not complete without a good report.
+Knowing how to write one, format it, and present it to your audience is the
+key to being a skilled ethical hacker. A report should be well-organized,
+clear, to the point, and understandable. The format and the way you present
+it matters as well. For instance, if you have a red header, all of them should
+be red. Consistency and readability are crucial, so when you write your
+report take great care. Follow the usual rules of writing and avoid grammar
+mistakes while maintaining your voice, or style, throughout the text.
+You might consider these tips to be trivialities that are beneath a hacker,
+however, well-formatted and written reports enhance your credibility as a
+professional.
+			</p>
+			<h3>
+				Think of Your Audience
+			</h3>
+			<p>
+When writing your report, you should draft it with your audience in mind.
+There are three main audience categories, namely the executive class,
+management class, and technical class. You need to keep in mind which
+part of your report will be the focus of each audience and write it for them.
+For instance, a manager will not care about what exploit you used to take
+control of a system, however, the company’s tech division will be highly
+interested. So let’s briefly discuss each audience in order to understand
+what they’re interested in.
+1. The executive audience : This audience includes mostly the
+CEOs of a company. They will only focus on reading the
+executive summary of the report, as well as the remediation
+report and perhaps the findings summary. Take note that
+usually the executives do not have much technical knowledge
+and therefore ignore most of your report. Therefore, you
+should write your summaries with this audience in mind.
+2. The management audience : This audience will be
+interested in your vulnerability assessment and weaknesses
+you uncovered. They are the ones handling the security policy
+of a company or organization, so they will be interested in a
+few more details than CEOs.
+3. The technical audience : The software developers as well as
+the manager of security will be interested in reading the
+details of your report. They are responsible for fixing security
+breaches and patching up vulnerabilities, so they will want to
+read the technical side of your report thoroughly. You should
+include screenshots for them in the report in order to help
+them resolve the problems.
+Report Structure
+Now let’s take a look at the precise structure of a penetration test report to
+understand what kind of information it should contain.
+1. Cover page : We start from the very beginning with the
+cover page. This section should contain your company logo if
+you have one, a title, and a short description of the test. The
+cover page should look professional, because its quality will
+have an impact on how the customer perceives you as a
+professional.
+2. Table of contents : This section is quite self-explanatory.
+Right after the cover page, you should write a clear index so
+that each particular audience can skip to the part of the report
+that is relevant to their position.
+3. The executive summary : This part of the report is
+extremely valuable, and it can make or break the entire
+documentation. The executive summary is specifically written
+for the CEOs of a company or anyone else who holds
+executive power. It should be written comprehensively for an
+audience that lacks technical knowledge. You should start by
+defining the purpose of the test and how you carried it out.
+Then explain your results and findings clearly and to the
+point. The summary should include the general weaknesses
+that were discovered and what exactly caused these
+vulnerabilities. Lastly, write about the risks you determined
+after your thorough analysis and discuss how you can lower
+these risks by applying the right countermeasures.
+4. The remediation report : This part of your test report is
+mainly aimed towards the management, however the
+executive class might also be interested in it. Keep in mind
+that both audiences might lack technical knowledge. So
+what’s the remediation report all about? It should contain all
+your recommendations that will improve security once they
+are implemented. For instance, you might suggest
+implementing a new firewall or an intrusion detection system.
+You should list and describe everything clearly and to the
+point.
+5. The findings summary : Also known as the vulnerability
+assessment summary. In this section of your report you will
+discuss all your findings, or in other words the strengths,
+weaknesses, and risks involving the system you tested. Here,
+you should include charts and other visual representations to
+help the audience understand the situation. Display the
+vulnerabilities you uncovered and classify them based on how
+severe they are.
+6. Risk assessment : This is the section where you demonstrate
+the risks based on your findings. You should describe the
+impact each vulnerability can have on the system and how
+often it can occur. 7. Methodology : Keep in mind that this section of the report
+is entirely optional, unless you were requested by the client to
+follow a specific methodology. In that case, you should report
+the steps you took and even include a flowchart that clearly
+shows the process.
+8. Detailed findings : This part of the report is for the
+technical audience. Here you will discuss your findings in
+detail and include information on the vulnerabilities you
+uncovered, what caused them, what risks are involved and
+what your recommendations are to improve data security. The
+developers as well as the security manager need to know
+where the vulnerability was produced and how in order to
+take the right steps to resolve the issue.
+Now that you grasp the concept of penetration testing and you understand
+how a report is supposed to be written, it’s time to push forward and learn
+the technical side of hacking.
+			</p>
+			<h2>Chapter 2 Getting Started</h2>
+			<h3>
+
+			</h3>
+			<p>
+				Hackers have a reputation for being highly intelligent individuals and
+prodigious in many ways. It can therefore seem to be an overwhelming and
+uphill task to start from scratch and reach any level of practical proficiency.
+One must remember that everyone must start somewhere when learning a
+subject or skill. With dedication and perseverance, it is possible to go as far
+in the world of hacking as your will can take you. One thing that will help
+in the process of becoming a hacker is to set some goals. Ask yourself why
+you want to learn hacking and what you intend to accomplish. Some just
+want to learn the basics so they can understand how to protect themselves,
+their family, or their business from malicious attacks. Others are looking to
+set themselves up for a career in white-hat hacking or information security.
+Whatever your reasons, you should prepare to learn quite a bit of new
+knowledge and skills.
+			</p>
+			<h3>
+
+			</h3>
+			<p>
+				The most important weapon in a hacker’s arsenal is knowledge. Not only is
+it important for a hacker to learn as much as possible about computers,
+networks, and software - but in order to stay competitive and effective they
+must stay up to date on the constant and rapid changes in computers and
+computer security. It is not necessary for a hacker to be an engineer,
+computer scientist, or to have intimate knowledge of microprocessor or
+computer hardware design, but they should understand how a computer
+works, the chief components and how they interact, how computers are
+networked both locally and through the internet, how users typically
+interact with their machines, and - most importantly - how software dictates
+computer function. An excellent hacker is fluent and practiced in several
+computer languages and understands the major operating systems. In is also
+very useful for a hacker to be familiar with the history, mathematics, and
+practice of cryptography.
+It is possible, and increasingly common, for a layperson with little hacking
+experience and only slight or intermediate knowledge about programming
+to conduct an attack against a system. People often do this using scripts and
+following procedures that were developed by more experienced operators.
+This happens most commonly with simpler types of attacks, like denial of
+service. These inexperienced hackers are known in the hacking community
+as script kiddies. The problem with this type of activity is that the
+perpetrators have little appreciation for what’s going on in the code they are
+running, and may not be able to anticipate side effects or other unintended
+consequences. It is best to fully understand what you are doing before
+attempting an attack.
+			</p>
+			<h3>
+
+			</h3>
+			<p>
+				Computers vary in size, shape, and purpose, but most of them essentially
+				have the same design. A good hacker should study how computers evolved
+				from the earliest machines in the 20th century to the vastly more
+				sophisticated machines that we use today. In the process, it becomes evident
+				that computers have the same basic components. To be an effective hacker,
+				you should know the different types of processors that exist on the majority
+				of modern computers. For instance, the three largest microprocessor
+				manufacturers are Intel, American Micro Devices (AMD), and Motorola.
+				These processors comprise most of the personal computers that a hacker
+				will encounter, but each has their own unique instruction set. Although
+				most hackers rarely have to deal with programming languages on the
+				machine level, more sophisticated attacks may require an understanding of
+				the differences between processor instruction sets.
+				Some processors are programmable by the end user. These are known as
+				Field-Programmable Gate Arrays (FPGA) and are being used more and
+				more often for embedded systems, particularly in industrial controls.
+				Hackers have been known to gain access to these chips while they are in
+				production in order to deploy malicious software at the final destination. An
+				understanding of FPGA architecture and programming is necessary for
+				these types of sophisticated attacks. These embedded attacks are
+				particularly concerning to military and industrial customers that purchase
+				chips on a large scale for critical systems.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Networks also have different architectures. The architecture is determined
+				not only by the configuration of the different nodes but also on the medium
+				that connects them. Originally, networked computers were always
+				connected by copper wire. Commonly used copper network cables, often
+				known as ethernet cables, consist of twisted pairs of copper wire. Although
+				the most common of these cables is the category five, or CAT-5, cable, it is
+				beginning to give way to a new standard, CAT-6, which has a greater
+				capacity for transmission of signals. For very high speed applications and
+				longer distances, fiber-optic cables are usually chosen. Fiber optics use light
+				instead of electricity and have a very high capacity for carrying
+				information. They are used to carry most modern cable television and high
+				speed internet services. Fiber optics serve as the backbone for the internet.
+				Within smaller areas, wireless networks are very common. Using a Wireless
+				Fidelity (Wi-Fi) protocol, wireless networks exist in a large number of
+				personal, private, and commercial LANs. Hackers are often particularly
+				interested in hacking into Wi-Fi networks, resulting in the evolution of WiFi security standards.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Regardless of the architecture or medium of transmission, when two
+				terminals are communicating across a network they must do so using a
+				common set of rules known as a protocol. Networking protocols have
+				evolved since the first computer networks were created, but they have
+				retained the same basic layered approach. In general, a network is
+				conceptualized in terms of different layers that perform different functions.
+				This is also known as a stack. The most common communication protocols
+				used today are the Internet Protocol (IP) and Transmission Control Protocol
+				(TCP). Taken together, these are commonly known as TCP/IP. These
+				protocols change and are standardized on occasion. It is critical for the
+				hacker to learn these protocols and how they relate to communication
+				between the different layers of the stack. This is how hackers can gain
+				higher and higher levels of access to a system.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Programming Languages
+				It may seem daunting to learn a programming language from scratch having
+				never done it before, but many people find that once they become proficient
+				at one programming language, it is much easier and faster to learn others.
+				Hackers not only have to understand programming languages to be able to
+				exploit software vulnerabilities, but many hackers need to write their own
+				code to be able to execute a particular attack. Reading, understanding, and
+				writing code is fundamental to hacking.
+				Programming languages range from very obscure machine code, which is in
+				binary and hexadecimal format and is used to communicate directly with a
+				processor, to high-level object-oriented languages that are used for software
+				development. Common high-level object-oriented languages are C++ and
+				Java. The code written in high-level languages is compiled into the
+				appropriate machine code for a particular processor, which makes highlevel languages very portable between different types of machines. Another
+				category is a scripted language, where commands are executed line-by-line
+				instead of being compiled into machine code.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Learning programming languages takes time and practice - there is no other
+				way to become proficient. Long evenings and overnight marathons of
+				writing, debugging, and recompiling code are a common rite-of-passage
+				among beginning hackers.
+			</p>
+			<h2>
+				Chapter 3 Obtaining Passwords
+			</h2>
+			<p>
+				In this section, we will look at how to obtain the passwords of a network. I
+				will focus on wireless networks since for wired networks you will have to
+				be connected via a cable. I will be using a Wi-Fi network I created for my
+				demonstration.
+				There are many ways of obtaining a network password that doesn’t involve
+				computer hacking and I recommend you test these methods first and use
+				hacking as a last resort. You can do stuff like, looking at files thrown away
+				by the organization or person you want to hack or just ask some dude who
+				works or stays in the place you want to hack what the password is. Some
+				organizations leave it as notes on the wall or write it somewhere everyone
+				can see.
+				There are many ways you can get a Wi-Fi password using Kali Linux but
+				almost all of these processes are time-consuming if the password is long
+				and sometimes it fails to crack the password if it is complex. What I am
+				going to show you is how to use social engineering to get the password.
+				What is social engineering? This is basically a form of hacking in which
+				you trick the computer user into doing what you want. Examples of social
+				engineering are the phone and email scammers who trick you into giving
+				away your credit card details or downloading a virus.
+				So we are basically going to trick a computer user to give us their password
+				but to do so, we need to look legit. That’s where Fluxion comes into play
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Fluxion is a script that you can install on Kali Linux. It uses social
+				engineering to create a Wi-Fi network that is a mirror to that of the target. It
+				then disconnects the target from his real Wi-Fi network. Since our fake WiFi looks just like the real one, the user will attempt to reconnect using our
+				fake network from which we use a web interface to ask him/her for the
+				password.
+				After obtaining the password, Fluxion will display it and we can use it to
+				connect to the network. The reason fluxion works is because it creates a
+				similar Wi-Fi network to that of the target and also has a web interface
+				similar to that of different routers. Fluxion also allows you to select your
+				language of choice for the attack.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Installing fluxion
+				Fluxion is not installed by default in Kali Linux and so we have to install it
+				ourselves. You can find the Github repository for Fluxion here . Once on the
+				Github repo, click on the “Clone or download” button and then copy the
+				link given.
+				Open the terminal and navigate to the /opt/ directory by typing cd /opt/ this
+				is the directory in which we will install our scripts. If you ever want to go
+				back to the home directory you can just type cd and that will do it.
+				Once in the /opt/ directory, we now enter the git clone command together
+				with the copied link. You can do to by typing git clone and then rightclicking on the terminal and selecting paste to paste the link. You can then
+				press enter to start downloading the script; fluxion will begin to download
+				as shown in the following image.
+				Once the process is complete you can type ls to list all the files in the
+				directory. You should see the fluxion folder next to another one called Teeth
+				which is usually there by default.
+				Now navigate to the fluxion directory by typing cd fluxion , by now you
+				should be getting the hang of it. Now use the list command to see the
+				various files (white) and folders (blue).
+				You will see two files that are green in color, these are the scripts. The one
+				that ends in .py is a python script while the one that ends in .sh is a bash
+				script. When the scripts are green it means they have the needed
+				permissions to run properly. If you find a script that doesn’t have
+				permissions (they are white just like other files), use the command chmod
+				+x  to grant permissions.
+				We are going to run the fluxion.sh script; we can do that by typing
+				./fluxion.sh you can run any script this way. Once you press enter, fluxion
+				will start to run. You will at first get a long list showing needed programs
+				that have not been installed. You can install them using the apt get install
+				 or by using the install script which does it automatically.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				When we showed a list of the files and folders in the fluxion directory, we
+				can see there is a folder called “install”, navigate to that folder and use the
+				list command to see the available files. You will see a script labeled
+				install.sh, run in by typing ./install.sh once you click enter, the script will
+				start installing the missing programs.
+				It might take a while so please be patient. If you are asked a question during
+				installation, you can reply by typing y for yes and n for no.
+				Once the installation is done, you can type cd .. to go back by one directory
+				to the fluxion folder. We can now run the fluxion script, but first, let us talk
+				about wireless cards.
+				In order for fluxion or any other wireless hacking tools to work, your
+				computer’s wireless card must support monitor mode. This allows your
+				wireless card to intercept packets or data from the network even if that data
+				was not being sent to your computer. You can look up if your wireless card
+				supports monitor mode by searching it online. If your card does not support
+				monitor mode, you can buy ones that do on places like Amazon, they can
+				be plugged in using via USB and some cost as low as $20.
+				My computer’s internal wireless card does not support monitor mode so I
+				will also connect an external wireless card via USB. Once the wireless card
+				is placed in a USB port, you will have to go to the Devices menu on the top
+				bar of the Kali Linux virtual machine window. Navigate to where it is
+				written USB and select your wireless card in order to use it in Kali Linux.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Now we have to fire up fluxion by using the fluxion.sh script. When it starts
+				to run, it will detect the wireless card and switch to monitor mode
+				automatically.
+				The first thing you will be asked is to choose the language you want to use.
+				You can select a language by typing the language’s number on the list. I
+				want to use Fluxion in English so I chose 1.
+				After that, you will be asked to select the channel to scan. Let us scan all
+				the channels so we will select the option 1 and press enter.
+				Fluxion will run a scan of all available Wi-Fi networks and show them on a
+				white window. I have a test Wi-Fi labeled test which can be seen in the
+				image that follows. You can also see on the bottom that a device is
+				connected to it. The BSSID is the MAC Address of the router and the
+				ESSID is its name.
+				You can stop the scanning by clicking on the window and pressing Ctrl + C.
+				You will be shown a fluxion window with all the detected networks.
+				Networks that are red in color are those with connected devices. Select the
+				Wi-Fi network you want to attack by entering the number of the network. In
+				my device, the test network is number 2.
+				When you press enter you will be asked for a handshake which we don’t
+				have, so we will press enter to skip that part. A handshake is used by a
+				router to communicate with an already connected user. This allows a user
+				who has connected once to connect to the Wi-Fi network another time
+				without having to reenter the password
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				If a hacker can capture the handshake, he can try to crack it in order to get
+				the password of the Wi-Fi network. This is usually time-consuming.
+				After skipping the handshake part since we don’t have it, we will be asked
+				to select a method to capture the handshake. You can use any option you
+				want here but the pyrit option is the best one. So I’ll select 1.
+				Two windows will pop up. All you need to do is patiently wait until the top
+				window shows a message that the WPA handshake has been captured. It
+				may take between 30 seconds to 5 minutes. You can try to speed things up
+				by closing the bottom window after one or two minutes.
+				After the handshake is captured, you will have to also close this window.
+				Now you will have to check the handshake. You can do this by selecting the
+				handshake by typing 1.
+				If the handshake is not corrupter you will be asked to either select an SSL
+				certificate or create one. We will choose the option to create an SSL
+				certificate (option 1). The next option is to choose an attack option which
+				will be the Web Interface option (option 1). The SSL certificate will be used
+				on the web interface to make it look secure and trustworthy.
+				Our final option will be to choose the template for our web interface. Since
+				most people around here use Huawei routers, which is what I will select as
+				my interface (option 28).
+				Four new windows will appear which execute the attack. The user will be
+				disconnected from the original Wi-Fi network called TEST, he will have no
+				choice but to reconnect but he will unknowingly connect to fake Wi-Fi
+				network that is similar to the original. He will then be asked via a web
+				interface similar to that of Huawei (or whatever interface you chose) to
+				enter the Wi-Fi password.
+				Once the password is entered, fluxion will confirm if it is the correct
+				password and then display it on the screen. The password I used is 123Test,
+				which is what can be seen here.
+				There are many other scripts and programs that can be used for wireless
+				attacks. These scripts can be accessed by heading to the Applications bar on
+				the top left corner of the Kali Linux desktop.
+				Now that you have acquired the password, you can use it to connect to the
+				network.
+			</p>
+			<h2>
+				Chapter 4 The Hacking Guide
+			</h2>
+			<p>
+				Whatever is explained or taught in this section is to be used for
+				developmental, educational and research purposes only. We will consider
+				hacking into Android devices, but before then we need to ask some
+				questions. Why are we hacking into an Android device? For what purpose?
+				A vast number of people possess Android devices.  
+				Similar to software development, hacking is difficult and you can’t become
+				a professional hacker overnight. Hacking requires great skill and a level of
+				reasoning. As a hacker, your brain must function like a processing unit. To
+				practice hacking on a small platform, you will need to have some
+				experience with one of the various programming languages. Knowledge of
+				programming languages like C++, Linux and FORTRAN is very useful
+				when it comes to hacking. However, you will also need other kinds of
+				knowledge to become a skillful hacker. Daily, by reason of upgrades in
+				security measures, hacking becomes tougher. As a hacker, you must learn to
+				understand and beat security challenges. 
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				If you are a pro at penetrating servers and breaking into networks, the
+				easiest way to go about your business is by harnessing the power of Kali
+				Linux 2.0. Kali Linux 2.0 is by far the best Linux distribution that makes
+				hacking very easy for the programmer. You will be able to achieve your
+				goals in little time and become the owner of your personal network.  
+				1. Metasploit
+				Metasploit is a frame that helps to create exploits, shellcodes, triggers,
+				honey pots and payloads. Metasploit is a bank of several exploits and
+				similar elements that are packed into its frame. The software is public and
+				can be used on many operating systems out there, including Linux and
+				Windows. It comes with Kali Linux by default. Metasploit is a foul device
+				that can threaten other networks. You want to examine faults in network
+				security and learn how to manage them to prevent external attacks. 
+				Web applications and servers are also subject to attacks by Metasploit. In
+				Metasploit, GUI and command line interfaces exist equally. Metasploit is
+				available as a free version and but also has paid version (Metasploit Pro),
+				which offers more functionality
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				NMAP is short for “network mapper.” It probes a network while searching
+				for ports that are accessible to map network servers and so on. The core
+				function of NMAP is security analysis and the examination of networks to
+				detect computers that are available online. NMAP uses IP addresses and
+				packets in a way that reveals useful details about a network. For example, it
+				shows the ports that can be used to access the network and the apps being
+				used on the computer. It is advisable to first have some idea concerning the
+				commands before proceeding further to the GUI. 
+				3. Armitage
+				The Armitage is a display control tool employed in cyber security that
+				creates an interface for the Metasploit attachment that simplifies Metasploit,
+				making it less complex so it can easily be comprehended. Armitage is a
+				good place to start if you want to learn more about Metasploit. All of the
+				functions of Metasploit are gathered by Armitage in the procedures of
+				hacking, as they are meant to exploit, circumvent and raid a network.  
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				JTC is the acronym for “Jhon the Ripper.” It is a renowned tool for breaking
+				through an arena that is heavily secured with passwords. Simply referred to
+				as Jhon in the hacking world, it is the primary tool used to launch what is
+				called a dictionary intrusion. Jhon the Ripper has a bank of text called the
+				“word list”, which is composed of previously cracked passwords. Jhon the
+				Ripper selects one of these passwords from its bank and replaces the
+				wordlist of the password to be cracked. Then it gives the result of the new
+				imputed password. In other words, the hacker takes a previously cracked
+				password and interferes with the system in such a way that this previously
+				cracked password is substituted for the password to be cracked. After that,
+				the past success is re-initiated by Jhon and the substituted password is recracked. There is a similarity between Jhon the Ripper and THC Hydra,
+				which is a similar cracking tool. The slight difference is that Jhon is used
+				offline while Hydra is used an online. 
+				5.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Wireshark is an open source tool that scrutinizes networks with an outline
+				of network traffic. This tool belongs to the category of network sniffers.  
+				Ethereal was Wireshark’s old name. Its core function is to keep an eye on
+				differences that are used to monitor network traffic and to investigate
+				packets that are sent to and fro. After all of this, the results are presented to
+				the user in a format that can be understood. As time has passed, there have
+				been noticeable advancements. For example, filters and other various
+				packets like color coding have been created. All of this development has
+				helped in one way or another, especially in sharpening the penetrating
+				power of the testers. These testers are able to penetrate further into
+				networks and thoroughly scrutinize the packets. 
+				If you really want to become a master in network analysis, network
+				penetration and acquire other hacking skills, you must have experience and
+				knowledge about Wireshark.  
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Hydra, very identical to Jhon, is a password-dismantling device. In the
+				hands of expert hackers, Hydra can be dangerous. It is mostly combined
+				with Jhon, as both are used simultaneously. Hydra breaks passwords by
+				combining the power of a dictionary and brute force to assault a password
+				where it is to be imputed. Hydra gives permission to a large scope of
+				protocols. Examples include SSH, POP3, IMAP, Database, SMB, VNC,
+				LDAP, SMB, RTPS, HTTP, POP, TCP, SMTP and RTPS. 
+				The most powerful tool that currently exists online is “Suite.” Suite is an
+				app that provides web services and penetration testing. When it is fully
+				maximized, the possibility of its usage is almost limitless. Below are some
+				of the features of the Burp Suite. 
+				Intercepting Proxy is a feature that monitors and improves communication
+				between an application and the web browser.  
+				Spider is a feature that specifies all lists, names and characteristics of files
+				that exist on a network. 
+				Web Scanner is an important feature that scans for loopholes in the server. 
+				Intruder is a feature that can be used to launch attacks against networks. It
+				is used to scan for flaws and take advantage of them. 
+				Repeater improves and makes solicitations on behalf of the user. 
+				Sequencer examines the irregularity of the token’s CSRF, authenticity
+				token, etc. 
+				Extensions allow the user to include his or her own customized plugin or to
+				install plugins directly from the systems database. They are used to
+				creatively stage a tactical and cryptic attack. 
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				One characteristic of the OSWAP Zed Attack Proxy (acronym: ZAP) is that
+				it has no price tag attached to it. Its open source is made available to the
+				public. OSWAP is a popular feature and an effective proxy tool that can
+				substitute the Burp Suite. OSWAP is user friendly and does its job
+				efficiently and effectively because it exposes the flaws of web apps. The
+				functions of OSWAP are summarized as follows: 
+				A. Manual testing
+				B. Scrutinizing networks for leakages  
+				C. Scrutinizing the user target 
+				8. Engineering Toolkit
+				The Social-Engineering Toolkit, or SET as it is called, is another important
+				thing to mention. With this tool, assaults are launched against the user who
+				is operating the system instead of the system itself. It has some special
+				attributes that grant access to Java applets. The user is not aware of these
+				applets because the SET ensures everything is done underground. This
+				command line, when maximized, can produce effective results. It works on
+				any basic operating system including Linux and Windows. 
+				9. Aircrack-ng
+				This is another kit that dissembles passwords and allows users to access the
+				internet. In the right hands, it can be a profitable tool. However, it is
+				difficult and requires a lot of effort. For newbies, Aircrack-ng is a
+				shortwave cracking program. It is an 802.11 WEP and WPA-PSK keys
+				cracking kit that can reclaim keys from various kinds of data. However, the
+				data must have adequate packets and be trapped (in monitor mode).
+				Aircrack-ng is an indispensable tool that you definitely want to be using.  
+				Novices should be able crack a secured WEP with the right tools. However,
+				a lot of effort will be required to crack a WPA/WPA2.
+			</p>
+			<h2>
+				Chapter 5 Mobile Hacking
+			</h2>
+			<p>
+				With the dramatic increase in the usage of mobile phones, especially smart
+				phones, mobile hacking is gaining popularity. Mobiles can be hacked to
+				extract information about the device, to steal personal information, to make
+				calls or even to corrupt the device, making it unusable.
+				Mobile phones with Bluetooth can also be hacked using popular software
+				tools such as Super Bluetooth Hack, Blue Scanner, Bluesnarfer, Blue sniff,
+				btCrawler, etc. Their features are described below:
+				Super bluetooth hack
+				This is a popular mobile hacking tool that scans and discovers the nearest
+				mobile devices and connects with them. After connecting, one can gain
+				access to the victim’s phone book or SMS and can even switch the target
+				device on or off. If the target device has weak security, this tool can also
+				allow the hacker to send an SMS or make calls through the target device.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Blue Scanner is a software tool that discovers all the nearest mobile devices
+				that have Bluetooth turned on and will attempt to obtain information about
+				each of those devices without having to pair with them.
+				Bluesnarfer
+				Bluesnarfer is a hacking tool that can connect to a Bluetooth device and
+				steal information from it. Such stealing of information using a Bluetooth
+				connection is called Bluesnarfing. Bluesnarfer can provide the hacker with
+				access to the victim’s text messages, calendar, contacts, emails, and
+				sometimes pictures and videos. It can all be done without the knowledge of
+				the victim and without having to pair with the victim’s mobile phone. Using
+				this tool, the hacker can send malicious code that can corrupt or completely
+				shut down the target device.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Blue sniff is not a hacking tool in itself, but it can discover the nearest
+				Bluetooth devices that are in the “hidden” mode. Bluetooth devices that
+				are in the hidden mode cannot be discovered during the usual Bluetooth
+				scans. Blue Sniff, a Linux utility, can do the job with ease.
+				Hacking into Mobile Apps
+				Smartphones are popular because of the wide variety of apps that can be
+				installed on them. Mobile apps can be hacked. When an app is accessed
+				from an app store, its binary code is downloaded to be read and executed by
+				the device’s processor. But these binaries have vulnerabilities that can be
+				exploited by a technically well-equipped hacker. Such exploits can be
+				categorized into two types, namely:
+				Modification/injection of code
+				Reverse engineering
+				Modification/Injection of the code
+				This is done by inserting malicious code in the app’s binaries. The main
+				motivation for a hacker to perform code modifications in the binaries of an
+				app is to change the behavior of the app. In general, the binary code
+				modifications are done to:
+				modify the app’s license agreement
+				compromise its security features
+				perform unauthorized transactions from the app
+				unlock the full version, if the app is a trial version
+				bypass its purchase requirements
+				disable the display of ads.
+				After making the modifications, the hacker can distribute it as a software
+				patch or a crack. Such software patches can be downloaded to bypass
+				several of the app’s restrictions. The app with the modified code can also be
+				repackaged as a new app and distributed.
+				Reverse Engineering
+				In reverse engineering, the binary code is first analyzed using code analysis
+				tools. Based on the analysis report, the hacker can reverse-engineer the app
+				binaries to steal the source code and other sensitive information. The code
+				and data stolen can be reused to build a similar app with a different brand
+				name and it is then submitted to the app stores.
+				The tasks that can be performed by a hacker using the techniques of code
+				modification and reverse engineering can be illustrated in the above
+				diagram.
+			</p>
+			<h2>
+				Chapter 6 Penetration Testing Basics
+			</h2>
+			<p>
+				What is a Penetration Testing?
+				Penetration testing, in its simplest form, is a type of computer security
+				testing that figures out how secure a computer system is. Usually, the test is
+				done to find the vulnerability and various risks that might be present in a
+				given computer system or application.  If a computer is not sufficiently
+				secure then hackers and other forms of attack will easily access the system
+				and compromise any data stored on it.
+				Many different computer security experts describe, conduct and market
+				penetration testing differently. This makes it be confused with other
+				computer security processes such as security assessment, vulnerability
+				scanning, and compliance audit. Penetration testing is different from all
+				these other processes in a number of critical ways:
+				Unlike vulnerability scanning, penetration testing does not just uncover
+				vulnerabilities; it also explores all the uncovered vulnerabilities so as to
+				prove the real world attack vectors a computer system faces. 
+				Although penetration testing may employ automated tools and processes, its
+				main focus is on the human skills and sound judgment of the team of
+				individuals that conduct the testing. This is because security threats can beat
+				the most advanced and sophisticated tools and technologies but it cannot
+				escape a human mind which can always think outside the box. 
+				Security and compliance audit search for the presence of security measures
+				and configuration but penetration testing goes a step further to establish
+				how effective those security measures and configurations are against realworld attacks. 
+				Penetration testing explores multiple attack vectors against a given target so
+				as to come up with a stronger security combination that is effective in
+				protecting a computer system. 
+				Why do you need Penetration Testing?
+				Penetration testing is quite valuable to computer users, especially in large
+				organizations that have many computers and use computers to process
+				valuable information such as an employee’s payroll and their personal
+				details.  The following are important reasons why businesses invest in
+				penetration testing
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Simulates an attack environment
+				The only way you can be able to protect your computer from an attack is if
+				you know exactly how an intruder will access your computer.  Penetration
+				testing helps you know this as it helps simulate attack environment using
+				various attack vectors and thus gives an idea of how best to increase your
+				computer’s security. 
+				❖     Help uncover security loopholes in your computer security
+				system
+				Most of the major computer attacks that go unnoticed exploit loopholes in
+				the computers security system. Penetration testing examines your computer
+				software and features so as to identify security weak points where an
+				intruder can gain access through. This is important information that is then
+				used to beef up the computer security for a given system.
+				❖     Helps find ways to beat Black Hat attacks
+				Black hat attacks keep changing and adapting to existing computer security
+				measures. This means that to effectively secure your computer, you need to
+				find ways you can defeat black hat attacks. Using penetration testing you
+				can simulate how black hat hackers will get into your system and this will
+				help you know how best to build your computer security so that it can keep
+				black hat attacks at bay. 
+				❖     Estimates the magnitude of potential attacks on businesses
+				Different kinds of attack cause various levels of losses. In addition, some
+				kinds of attacks are more common in certain fields than others. To protect
+				your business, financial records and customers from potential attacks it is
+				important that you know the magnitude of various attacks within your
+				business line. This will help provide evidence of why you need to invest in
+				various types of computer security technologies. 
+				❖      Helps Enhance your Management System:
+				Computer security is an important component of information management.
+				This means that if you are using computers for your business then computer
+				security is an integral part of your management system. Penetration testing
+				provides you with important information on computer security threats and
+				degrees of vulnerability from various vectors of attack. This helps
+				reorganize how you manage your business so as to efficiently secure your
+				computer systems and your business information. 
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Protects you from financial losses
+				A simple security breach can result in huge losses for any business.
+				Criminals can use computer vulnerability to conduct fraud activities that
+				will result in huge losses. In addition, they may steal your customers’ data
+				and share it online which may result in loss of business and even legal cases
+				that may further hamper your financial wellbeing.
+				❖      Identify undetectable vulnerability
+				Today with the advancement in technology there are a lot of vulnerabilities
+				that are difficult to detect. You need information on such vulnerability so as
+				to effectively protect your computer systems. Using penetration testing you
+				can know areas and types of attack that will be difficult to detect and come
+				up with measures to deal with them when they happen. 
+				❖     Test the ability of your security system to foil an attack
+				How effective are your computer security measures?  The only way you can
+				be able to know this is by penetration testing. Penetration testing will help
+				you know how easy an attacker can access your computer and thus be able
+				to respond effectively.
+				It is now clear that there are many reasons why you need to conduct
+				penetration testing.  Defining the nature and scope of your penetration
+				testing will largely depend on your goals.  If you are worried about attacks
+				on your business, then you will consider a more intense and aggressive
+				penetration testing than when your main goal is to pass compliance
+				assessment. 
+				So what is the right penetration testing for you?  If penetration testing is a
+				requirement in your industry, then you may be tempted to find the cheapest
+				penetration testing service that you can find. But this is not always the right
+				way to approach this issue. Consider these two factors:
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				1. Do you have a budget for penetration testing?
+				If you already have a budget for penetration testing, then there is no need
+				for cutting corners, instead, leverage the budget to get value for your money
+				by widening the nature and scope of your penetration testing. 
+				2. What will be the effect of an attack?
+				Before you decide on the scope of your penetration testing it is important to
+				find out what will be the impact of an attack. For example, if an attack is
+				likely to result in loss of money, business and legal proceedings against
+				you, then you will consider having an investment in intense penetration
+				testing. 
+				What to consider when Hiring a Penetration Testing Service Provider
+				To do penetration testing, you need an expert with the right experiences,
+				skills, and tools to do the job. However, there are a lot of people out there
+				providing the service, with some not well qualified for the job. It is thus
+				important that you pick the right team to do the job for you.  The following
+				are important suggestions that you should consider when hiring someone to
+				do a penetration testing for you: 
+				❖      Look for the right qualification  
+				Qualification is the key in getting the right penetration tester. Before even
+				considering the qualification for the team it is important you make sure that
+				they are not connected to the management of the computer system to be
+				tested. This is important to eliminate bias in their job. For example, if you
+				have a third party manage your computer system, you should not again hire
+				them to do penetration testing, because even if they are qualified for the job
+				they are bound to be biased.
+				To know if someone has the right skills to do penetration testing you need
+				to find out the kind of certification they hold.  Some of the certifications
+				that are a testimony to the competence and skills of a penetration tester
+				include: Certified Ethical Hacker (CEH), GIAC Web Application
+				Penetration Tester GWAPT), Offensive Security Certified Professional
+				(OSCP), Advance Penetration Tester (GXPN), CREST Penetration Testing
+				Certifications and GIAC Certified Penetration Tester (GPEN) among
+				others.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				You should also be keen on past experiences as someone with vast
+				experience in the field will provide you with better services than someone
+				new.  For example, you should be interested in knowing the years of
+				experience they have doing penetration testing, the type of companies they
+				have worked for, the kind of projects they have worked on and the
+				references to attest to what the provider is putting forward.  This is
+				important because a provider that is relatively new in the field but has
+				worked predominantly on projects within your field may be a better bet
+				than a provider with vast experiences in other fields and very little in your
+				very own field. 
+				Before you hire a tester it is important that you also get a tester with the
+				right tools for the job. By interrogating the candidates for the job ensure
+				that you get a proper background check as this will help you know if they
+				have the right experience, skills, and tools to do the job to your satisfaction.
+				This is the only way you will get the most qualified provider to do your
+				penetration testing. 
+				❖      Know the nature and scope of your penetration testing
+				If you know what you want to be done that you are more likely to get the
+				right person to do the job, but if you don’t know what you want than anyone
+				else is qualified for the job. The right team will help you define the scope of
+				your penetration test as well as its nature. So before you give the most
+				qualified team the job you need to sit down as look at the nature of the work
+				to be done. If your provider doesn’t seem to get what you want to be done,
+				then he/she is not the right candidate for the job. Give higher priority to
+				individuals who want to limit the scope of your testing to key areas with the
+				highest number of vulnerability and attacks. This is important as it will help
+				the process to focus on key areas of your computer security. 
+				❖     Black box or White Box Penetration testing
+				These two kinds of penetration are important in determining how well you
+				conduct your penetration testing process. Each has its own benefits over the
+				other. For example, a white hat penetration testing in which case the tester
+				has prior information on the system or network access is less time
+				consuming and cost less leaving you with enough time and money to beef
+				up your computer security and it also help highlight the kind of threats
+				insiders can cause to a computer system thus making it easy to protect your
+				computer system from such threats.  Black box penetration testing, on the
+				other hand, does not allow the tester the luxury of having an insider’s
+				knowledge and thus provides the best test result for the system from the
+				perspective of a real world attacker. In addition, because the attacker spends
+				so much time, the black box penetration testing may provide a lot of
+				information on other vulnerabilities within the system. 
+				Before you hire a penetration tester, it is important that you know the kind
+				of penetration testing and you only hire someone who is an expert or feels
+				comfortable with that particular penetration testing. for example, if you a
+				provider tells you that they are only comfortable with white hat testing and
+				you want a black box testing, then consider finding someone else who is
+				comfortable as a black box tester.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				❖      Goals and Objectives
+				Your goals and objectives should be able to guide you to pick the right
+				penetration tester. What do you want to achieve with your penetration
+				testing? Does the experience of the penetration tester you are considering
+				match those goals? Some penetration testers may have experience and the
+				right qualifications, but their experience does not show that they can
+				achieve your goals and objectives. So before you start looking to hire
+				someone to do a penetration testing for you ensure that you have set the
+				goals and objectives for the process. This will not only help you get the
+				right talent for the job, but will also help you set your scope and measure
+				the outcome of the process. 
+				When do you have to Perform Penetration Testing?
+				Penetration testing should be done regularly so as to secure your computer
+				systems and protect your data and information from the ever advancing
+				attacks. In addition to conducting penetration testing regularly you should
+				ensure that you conduct penetration testing whenever:
+				✓    You discover new threats to your computer systems
+				✓    You add a new hardware/network or infrastructure to your
+				computer system 
+				✓    You install new software or update your system software
+				✓    You move offices or add office space
+				✓    You create a new end-user policy or program
+			</p>
+			<h2>
+				Chapter 7 Spoofing Techniques
+			</h2>
+			<p>
+				A system can be hacked either locally or through the Internet using one of
+				the following methods:
+				Using a pen drive or an external hard disk to infect the
+				system with a virus
+				Faking user identity to gain access rights to a system
+				Misusing the trust between the network system and the
+				user
+				Now, how do hackers manage to access or attack a system amidst all the
+				security protocols and strong passwords protecting it? How can a hacker
+				break into a network in spite of strict rules that only certain authorized
+				persons can access the network? Most of the time, the answer is spoofing.
+				The different types of spoofing are as follows:
+				IP spoofing
+				ARP spoofing
+				DNS server spoofing
+				Website spoofing
+				Email spoofing
+				Ip spoofing
+				Networks do not allow access to all their IP addresses. Only certain trusted
+				IP addresses can make their way into the network. To gain access into the
+				network, the hacker uses an IP address that spoofs a trusted IP address.
+				For example, let us suppose that a certain network allows the IP address
+				x.x.x.x to gain access into its system. A hacker whose system IP address is
+				y.y.y.y spoofs their IP address to appear like x.x.x.x to gain access into the
+				network.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				IP spoofing is mostly performed to flood the target system with huge
+				amounts of data, increasing the traffic. Sending more data packets than the
+				system can handle will overload the target system. All the data packets
+				seem to come from several spoofed IP addresses. In another method, the
+				target system’s IP address can be spoofed to send a huge number of data
+				packets to the other systems on the same network. To the other systems, it
+				appears as though the data packets are being sent from the target system,
+				when in reality it is actually the hacker who is sending the packets from
+				their system. As a result, all the systems that have received the data packets
+				flood the target system with responses, thereby overloading it with traffic.
+				Some networks use IP-based authentication instead of the user login
+				authentication. In such authentication schemes, the IP addresses of the
+				machines that are requesting access are verified based on trust relationships.
+				In such cases, the hacker can perform spoofing by impersonating a trusted
+				machine, which has permission to access the network.
+				Arp spoofing
+				Address resolution protocol (ARP) is a protocol that maps the IP address of
+				a machine to the MAC address. MAC stands for media access control. The
+				MAC address of a system is nothing but the physical address of the
+				hardware. ARP spoofing involves a hacker spoofing ARP messages and
+				sending them across the network, such that the MAC address of the
+				hacker’s system gets linked an authorized system’s IP address, which is
+				present on a network. Thus, all the data to be sent to the authorized system
+				will actually be sent to the hacker’s system.
+				ARP spoofing is performed for the following reasons:
+				Stealing information that is private to the network
+				Modifying data in transmission
+				Halting the traffic in the network
+				Hijacking sessions
+				Implementing man-in-the-middle attacks
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				It is possible to carry out ARP spoofing only in local area networks
+				(LANs). This is because the address resolution protocol can only be used in
+				a local area network.
+				DNS Server Spoofing
+				The domain name system is a service that maps the domain names to their
+				IP addresses. The DNS server allows email addresses, uniform resource
+				locators (URLs) and domain names to be resolved into their respective IP
+				addresses. A domain name spoofing attack involves an attacker
+				manipulating a DNS server so that a particular domain name is mapped to
+				an IP address that is under control of the attacker. Those IP addresses
+				contain malware-infected files. This type of spoofing is commonly used to
+				propagate computer viruses and worms over the Internet.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Website spoofing
+				Website spoofing involves the creation of a fake website that impersonates
+				a legitimate website. Usually, it has the same design as that of the original
+				website and sometimes may possess a similar URL. So, when an individual
+				mistakes the spoof website to be the original one and enters sensitive
+				information like username/password or other personal details like phone
+				number, Social Security Number or address, the information actually goes
+				into the hands of the attacker.
+				In a more serious attack, the attacker may create a shadow copy of the
+				WWW (World Wide Web) so that the victim’s data traffic is turned toward
+				the attacker’s system. As a result, the attacker can capture private
+				information on the victim. The URL of the spoof website can be made to
+				look genuine by using control characters. The actual address of the website
+				remains concealed in the background.
+				For example, let us suppose you are a bank customer and you use the bank’s
+				website for online banking. Let us suppose you have been redirected to a
+				fake website that has the same design and layout of the original bank
+				website. It may also possess a URL that is similar to the bank website’s
+				URL. Hence, you mistake the fake site for the actual site and enter sensitive
+				information like your credit card details and the PIN number. Now the
+				attacker running the fake website captures the information you have entered
+				and may use it for malicious purposes.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Email spoofing involves forging the “from address” of an email before
+				sending it to make it look like the email has arrived from a trusted
+				person/source. Spammers, to deceive the receiver about the legitimacy of
+				the email origin, mostly use email spoofing. Email spoofing is also used to
+				circulate worms or viruses through emails.
+				For example, let us suppose that an individual “X” receives an infected
+				email, which they open unknowingly. The worm code sent with the email
+				infects X’s email account. The worm code then goes through X’s email
+				contacts and detects the email addresses of two individuals “Y” and “Z.”
+				Let us suppose X, Y and Z are friends.
+				Without X’s knowledge, the worm code composes a similarly infected
+				email and sends it to Y. It is not a big problem, if Y receives the email from
+				an unknown source, as they are unlikely to open it. But what actually
+				happens is, the worm code uses Z’s email address to forge the “from
+				address” before sending the email to Y. In Y’s inbox, the infected email
+				appears to have come from “Z,” who is a friend of Y. But, in reality it is a
+				mail circulated by a worm code. Y is likely to open the infected email as it
+				shows Z���s email address as the “from address.”
+			</p>
+			<h2>
+				Chapter 8 Some Of The Basic Functions Of Linux
+
+			</h2>
+			<p>
+				Now it’s time to move on to some of the basics that you are going to need to
+				learn in order to use Linux confidently. These functions are important for
+				helping you to navigate the computer system with ease. Let’s take a bit of
+				time now to look at these basic functions, and learn how they can work for
+				us. 
+				Logging In and Out of the Interface
+				When it comes to the Linux operating system, you are first going to need to
+				provide your login credentials, meaning a username and password, each
+				time that you try to get onto the system. In addition to this, there are two
+				modes that you can choose between when you are running the Linux
+				system, and we will take a look at them below:
+				Graphical Mode
+				The graphical mode is going to be the default mode for your desktop
+				computer. Basically, if the computer screen is asking for the password and
+				username before letting you on, you will know that you are using the
+				graphical mode. To sign in, you will just need to enter in the login
+				credentials that you have already set up, and then hit OK or ENTER to
+				continue. 
+				After you enter in this login information, it can sometimes take a few
+				minutes to get everything loaded up and ready to go; the amount of time
+				that it takes for things to get going will depend on how powerful your
+				computer is and its processing capabilities. When the computer has finished
+				loading, you will need to open up an‘xterm’, otherwise known as a terminal
+				window. You will be able to find this tool by simply clicking on
+				Applications and then choosing Utilities. Note: in some of the newer
+				versions of Linux, there will be an icon available to speed up this process
+				and you can just click on that rather than going through the steps above. 
+				The terminal window is basically going to be the control panel for your
+				operating system. Most of the procedures that you want to do with the
+				operating system can be done with this tool, and as a general rule, when you
+				open the terminal window it should display some kind of command prompt.
+				Usually this is going to start out with your username for the system, as well
+				as some information about updates that were performed. 
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				When you are ready to log out with this mode, you need to make sure that
+				you have closed out of the terminal windows and all of the open programs.
+				You can then find the icon for logging out,or search for the Log Out option
+				on your main menu. If you forget to close out of an application or a
+				window, it isn’t that big of a deal since the computer can do it for you, but
+				the system is going to try and retrieve all of these windows and programs
+				the next time you come back, and this can slow down the process of getting
+				your computer started. Once you see that the screen is once again asking for
+				your log in credentials, you will then know that you are all logged out of the
+				system. 
+				Text Mode
+				The other mode that you can use for your credentials on this system is the
+				text mode. You will be able to see that you are in text mode when the whole
+				screen is black with just a few characters on it. This mode’s screen is going
+				to show a bit of data, including the name of the computer, a bit of data
+				about that computer, and then a prompt that is usable for signing in. This
+				one is going to be a bit different compared to the graphical mode because
+				you will need to press the ENTER key once you are done typing in the
+				username, as there is not going to be a clickable button or link on the
+				screen. You can then type in the password and hit ENTER once again. 
+				A nice thing about this mode is that while you are typing in the username
+				and password, you will not see any signs that you are typing. You wont see
+				the words, letters, or even dots and special characters come up while you
+				are typing. This can be confusing to some people who are brand new to
+				using this system, but it operates this way for security purposes. 
+				Once the system accepts your username and password, you will receive the
+				message of the day. Some of the distributions of Linux will have a feature
+				that is known as the fortune cookie feature, and that is going to provide you
+				with some extra thoughts each day. Then, the system will move on to
+				providing you with a shell, explained with the same details that you will get
+				when using the graphical mode. 
+				When you are ready to log out from this system, you will simplyneed to
+				type in‘logout’ and then press ENTER. You will be able to tell that you are
+				logged out from the system successfully when the screen comes back up
+				and asks you for your login credentials again. 
+			</p>
+			<h3></h3>
+			<p>
+				The Basic Commands
+Now that understand how to log in and out of the Linux system based on
+the type of mode we are in, it is time to start working on some of the basic
+commands that we will be using. These are pretty simple to learn, and if
+you have worked with some programming languages in the past, you may
+have seen some of these commands before. Some of the commands that you
+should learn as a beginner include:
+Is - this is going to show a set of files that are in the
+directory that you are using at this point in time. 
+Passwd - this command is going to change the password
+of the user who is currently on the system. 
+Pwd - this is going to show the current working
+directory. 
+Cd directory - this is going to change the directories.
+Man command - this is going to read man pages on
+command. 
+Exit or log out - this is going to make it easier to leave the
+current session. 
+Info command - this is going to read info pages on
+command. 
+File‘filename’- this is going to show the file type of the
+file that is given a certain name. 
+Apropos string - this one will search for strings using
+the‘what is’ database. 
+Other Things to Note
+			</p>
+			<h3></h3>
+			<p>
+				In most cases, you are going to issue the commands by themselves. For
+				example, you can just type in “is” and the system will be able to do the rest
+				of the work for you. A command is going to behave in a different manner if
+				you specify an option, and you can do this by introducing a dash. When
+				working in GNU, it will accept some longer options, as long as you
+				introduce them with two dashes, but there are some commands that won’t
+				have these extra options. 
+				What is known as an ‘argument’ to a command, is a specification for the
+				object on which you want to apply the command. A good example of this is
+				Is / etc. for this example, the /etc would be the directory and the argument,
+				while Is would be the command. This particular argument is going to show
+				that you would like to see the contents of the /etc directory rather than the
+				default directory. You will then be able to click on the ENTER key, and go
+				to that directory. Depending on what you are trying to do, some of your
+				commands will need arguments to help the system make sense of what you
+				are looking for. 
+				Using the Bash Features
+				The Bash, which is the default GNU shell on most of the Linux systems that
+				you will use, is going to make it easier to use certain combinations of keys
+				in order to perform a task easily and quickly. Some of the most common
+				features to use with the Bash shell include:
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Tab – this is going to complete the command or the
+				filename. If there is more than one option, the system will use
+				a visual or audio notification to tell you. If the system detects
+				that there are a lot of possibilities, it will ask you whether you
+				would like to check all of them. 
+				Tab Tab – this one is going to show the completion
+				possibilities for a filename or command. 
+				Ctrl + A – this one is going to move the cursor over to the
+				start of the current command line. 
+				Ctrl + C – this one is going to end your computer
+				program, and then will show the Linux prompt. 
+				Ctrl + D – this one is going to log you out of your current
+				session. This is a key combination that is similar to typing exit
+				or logout. 
+				Ctrl + E – this is going to move the cursor to the end of
+				your current command line. 
+				Ctrl + H –this is going to work similar to pressing the
+				backspace key on the keyboard. 
+				Ctrl + L – this one is going to clear out the current
+				terminal. 
+				Ctrl + R – this is going to search through the history of
+				commands
+				Ctrl + Z – this is going to allow you to suspend your
+				computer programs. 
+				Arrow right / arrow left – these keys are going to make it
+				easier to move the cursor along the command line that you are
+				currently on. You may find it useful if you need to add in
+				more characters or make some changes in the program. 
+				Arrow up / arrow down –these are the keys that will make
+				it easier to browse the history of the system. You can access
+				any lines that you want to repeat, change some of the data
+				when needed, and then press ENTER to execute these new
+				commands quickly. 
+				Shift + Page Up/ Shift + Page Down – using these key
+				combinations will allow you to check the terminal buffer. 
+				As you get a bit more familiar with the Linux system, you will begin to
+				better understand how these commands work, as well as some learn other
+				commands, which will make it easier to use the Linux system. These are
+				just a few of the initial commands that you should learn how to use, because
+				they are going to make navigating through the system much easier for you.
+				Give them a try and practice logging in and out of your system, so that you
+				can get a feel for how it works before moving on. 
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				The next thing that we are going to work on is the files and the directories
+				that are found inside of the Linux system. Many new users are going to
+				have issues with this operating system because they simply don’t know
+				what information is stored, or even where the information is placed. This
+				chapter aims to answer these questions, making your experience with using
+				Linux that much easier. 
+				The different types of files
+				For the most part, you are going to be working on regular files. These are
+				files that will hold onto ordinary data such as outputs from a task, text files,
+				and programs. Linux is not the same as Windows in the way it operates, so
+				keep that in mind. The files on screen are going to look similar to what you
+				are used to with Windows, but the places they are stored and how they work
+				will be a bit different with the Linux system. 
+				Basically, the file system is going to start at the root, which is also known as
+				the simple path; this is the place where everything is going to start from and
+				where everything is going to go when done. Aside from having the root and
+				the ports that go off it, things are going to look quite similar to what you are
+				used to on other operating systems, but you may notice that they are cleaner
+				and easier to handle now. The file extensions are still there in order to help
+				the user, which may make them a bit harder right in the beginning, but over
+				time you will start to appreciate the file extensions because they make it
+				easier to find your files and information as needed. 
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				The layout of your file system
+				To make things easier to find and understand, you will see that the file
+				system on Linux is going to be similar to a tree. The structure is going to
+				change and grow as you add in more files or you remove them over time.
+				Overall though, they are all going to come out from the root, and then the
+				changes that you make will show up after, further up the tree. You can add
+				in as many files as you need to make the system work well, and you will see
+				the tree changing form over time accordingly. Keep in mind that the names
+				on the file trees are not always required, but they are used for convention
+				and to keep things easy to navigate.
+				The tree for the file system is going to begin at the slash, which is also
+				known as the root directory. This is going to be shown with a (/). The root
+				directory will contain all of the underlying files as well as the directories
+				that are shown inside the operating system. The slash is often going to
+				proceed the directories that are just one spot below the root directory. This
+				is basically going to indicate the position of these directories, and can help
+				to differentiate them from other locations on the computer that may have a
+				similar name. Any time that you are using a newer version of Linux, make
+				sure to check out the root directory first to find the file that you want. 
+				The subdirectories of a root directory
+				There are going to be a variety of subdirectories that come after your root
+				directory in order to make up the system tree within your operating system.
+				Some of the subdirectories that you may find helpful include:
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				/bin–this one is going to contain your ordinary programs
+				including the ones that are shared by the system administrator,
+				the system, and by users. 
+				/dev–this one is going to hold the references to all the
+				peripheral hardware on the CPU. In general, these are going
+				to be shown on files that have special characteristics. 
+				/boot–this one is going to be composed of startup files
+				and a kernel. Some of the Linux systems are going to include
+				the grand unified boot loader, or grub, information as well. 
+				/etc–this is a subdirectory that is going to contain files
+				related to the system configuration. This is pretty similar to
+				the Control Panel that you will find with Windows. 
+				/home–this is the main directory for most common users. 
+				/misc–this is the subdirectory for any files that are
+				considered miscellaneous. 
+				/lib–this one is going to contain the library files for all the
+				computer programs that are on the computer. 
+				/opt–this location is going to hold some of the extra as
+				well as 3rd party programs. 
+				/root–this is the main directory that is used by the system
+				administrator. 
+				/proc–this is the virtual file array that will contain data
+				about the resources of the system. Any time that you want to
+				see some more information about this part, you will just need
+				to open up a terminal window and then type in“man proc”to
+				get stared. 
+				/initrd–this is going to hold the data for the booting
+				processes. Make sure that you never remove this one. 
+				/lost+found–this is the directory that is going to contain
+				the files that were saved if the system failed and had to close
+				down suddenly. 
+				/tmp–this is a storage unit that is temporary and it is used
+				by your operating system. You should never use it for saving
+				any work because when the system goes through a reboot, all
+				of the documents in this folder will be cleaned out. 
+				/sbin–this is going to hold the computer program that is
+				used by the operating system and the system administrator. 
+				/usr–this is going to contain the documentations,
+				programs, and libraries for all user related computer
+				programs. 
+				/var–this is used to store any temporary files and
+				variables that are generated by the user. These would include
+				things like file downloads, log files, and mail queues. 
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				You will be able to find the kind of file that you are working on based on
+				where it is stored in the computer. If you are unsure about where it is stored,
+				take a look through these file starters and see where it may fit in the best
+				based on what it is about, what the computer thinks it is in the first place,
+				and so on. You can also determine where you would like to see the file be
+				stored by adding one of these subdirectories to the beginning of your file. 
+				While this system may seem a bit hard to understand in the beginning and
+				you may be feeling like you are going to work on files and never find them
+				again, the tree system for saving in Linux is actually quite a bit easier than
+				what you will find with some of the other operating systems out there. If
+				you are able to navigate through the Windows operating system in order to
+				find your projects and your files, you will easily be able to figure out how
+				the file systems work with Linux. It will just take a bit of time to learn what
+				everything is called and to get used to this new system.
+			</p>
+			<h2>
+				Chapter 9 Taking Command And Control
+			</h2>
+			<p>
+				This chapter will introduce new sources of powerful Python scripts that you
+				can repurpose to collect data via an external control system in the target
+				machine and even use ready API to execute commands and install updates.
+				By the end of the chapter you should be able to create a Python tool that
+				you can control remotely over the internet to issue commands to the target
+				and to receive captured data.
+				Using Pastebin as a Command & Control channel
+				We included a killswitch in the keylogger (the ~ key to terminate the script)
+				but whether it is a good idea to have it on an actual surveillance program is
+				for you to decide. Experienced hackers include a killswitch in the keylogger
+				code as a function and not a simple keypress event so that they can even
+				terminate it remotely if need be and not have the user unintentionally kill
+				the logger.
+				It is important that our keylogger tool be able to collect data and send it
+				back to you, and to receive commands to execute remotely. This is called
+				Command and Control. There are many Command and Control channels
+				that you can use such as a chat system, a HTTP server, or Pastebin, the
+				temporary plain text depository online. To illustrate Command and Control
+				using our Python code, we will use Pastebin.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Pastebin provides a well-designed API that makes it easy to create scripts
+				that communicate with their servers with efficiency. Before we can update
+				out keylogger code, we first need to write the support code to conveniently
+				access and use Pastebin API. We will call the script pastebin.py .
+				Pastebin.py will use the requests library to send responses in XML format,
+				therefore, we will also need to import Python’s XML parser as in our code
+				below. The three URLs of interest that we will use in the script are also
+				defined in this section.
+			</p>
+			<h2>
+				Chapter 10 The Laboratory
+			</h2>
+			<p>
+				The first task is to build our own laboratory.
+				Don’t experiment the techniques I will teach you on contexts other than
+				your laboratory: this is not the right way to become an ethical hacker!
+				How can we build a protected environment where we can perform our
+				simulations? The answer is straightforward: we can use a hypervisor.
+				This consists in simultaneously executing multiple virtual machines and,
+				therefore, more operating systems within the same physical system. A
+				hypervisor makes the whole process much more convenient!
+				Virtualization
+				By using these programs, you will be able to run several operating systems
+				at the same time inside your PC. The only limit you have is the RAM
+				memory you can use.
+				The procedure is not difficult, even though you will need to become more
+				familiar with this tool. Basically, here is the list of steps you should take:
+				Download a particular software called hypervisor.
+				Collect the .iso images of the operating systems you want to
+				install.
+				Access the software.
+				Start the virtual machine creation process.
+				Create and boot this virtual machine.
+				Proceed with the installation of the desired operating system.
+				Use the virtual machine you have just created.
+				Hypervisor
+				You can choose among several versions. Some of them are free, while
+				others require a subscription fee. Here are the most common ones:
+				VMware Workstation (paid version, 30-days free trial).
+				VMware Player (free version).
+				Oracle Virtualbox (free version)
+			</p>
+			<h3>
+				The hypervisor we will use in this book is the VMware Workstation. It is a
+paid version, but we can take advantage of its 30-days free trial.
+I have chosen to use this hypervisor because it is the most complete one in
+terms of the variety of functions and options available for network
+management.
+For download it, go to this link and click on “Download ”:
+https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing
+/vmware_workstation_player/15_0.
+If version 14 – the latest version of this software – is not working, you can
+try version 12. Some older CPUs are not supported. If not active yet, you
+need to enable the virtualization support from BIOS (search on Google).
+At this point, if the installation is successful, this is what you should be able
+to see, obviously without any virtual machine already installed.
+Now you are finally ready for the next step.
+Images of an operating system
+In order to create your virtual machines, you need an image of the operating
+system you want to install. For the lab we are building, you need the image
+(.iso format) of the following operating systems:
+Kali Linux -> freely downloadable from
+https://www.kali.org/downloads/.
+Windows 7 -> 30-days version, easy to find on the Internet.
+Windows 10 -> 90-days version, easy to find on the Internet.
+If you are wondering why I picked these operating systems, this is the main
+reason: Kali Linux will be our attacking machine, basically the one which
+we will use to start all our attacks. The other two Windows machines will
+instead be our targets.
+Creation of virtual machines
+Now we just need to create virtual machines. To do this, go to "File -> New
+virtual machine" and follow the recommended procedure.
+Pay attention to the quantity of RAM you will be using. This amount
+depends on the RAM available on your PC, and you should try not to
+overuse it. Besides, for now just keep using the default options of your
+network adapter.
+Network management
+Managing the network correctly is extremely important. If you do not
+configure it correctly, the virtual machines will not be able to communicate
+between each other and hence your laboratory will not work properly.
+In VMware, we can use 4 different types of networks:
+As you can see from the screenshot above, these are the types of networks
+available:
+			</p>
+			<p>
+
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Bridged -> this type includes the creation of an IP address
+				belonging to the network in which your physical PC is located. I
+				will explain later what an IP address is.
+				   
+				For now, you just need to remember that it is a numerical
+				representation that uniquely identifies a specific interface on the
+				network. An example of an IP address is 192.168.1.10.
+				   
+				NAT -> once in this mode, your virtual machine can connect to
+				the Internet, but it cannot be reached from the outside.
+				   
+				Host-only -> in this case, the virtual machine can only
+				communicate with your physical host.
+				   
+				Custom -> here you can define your personal network and let
+				all the virtual machines communicate inside it. This is the mode we
+				will use!
+				To create it, go to "Edit -> Virtual Network Editor" and create a new
+				network as in the screenshot here below.
+				Now you should go back to the settings of your virtual machine. You can
+				choose the network adapter we have just created.
+				After this step, each virtual machine will have its own IP address, which is
+				automatically assigned and belongs to the 192.168.10.0/24 network.
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				Virtual machines booting
+				Now you are ready to boot your virtual machines. If you have correctly
+				performed all the operations described above, the machines will all be
+				started up and will have the IP address previously assigned.
+				For example, Kali Linux could have 192.168.10.1 as its IP address, while a
+				Windows 7 machine could have an IP address of 192.168.10.2, and one
+				with Windows 10 a value similar to 192.168.10.3.
+				Keep in mind that these virtual machines will now only be able to talk to
+				each other and cannot be connected to the Internet. If needed, we will have
+				to change the network adapter and set the NAT mode.
+				Installation of vmware tools
+				Another operation you will need to complete is the installation of VMware
+				Tools. They are nothing more than a set of features to improve the overall
+				performance of your virtual machine.
+				I won't bore you with the details. The procedure is very simple: you just
+				need to search on Windows or on Google the keywords "installation of
+				VMware tools on Kali”.
+				Connectivity verification of virtual machines
+				Our last effort now will be to verify that our virtual machines can talk to
+				each other. The steps you will need to take are the following:
+				1. Verify the validity of the IP address assigned to each virtual
+				machine.
+				2. Run the "PING" command on each virtual machine and verify
+				that the response is positive.
+				Let's see together how to do it:
+				Access the KALI machine and run the "ifconfig" command
+				from the terminal, verifying that the assigned IP address is
+				available.
+				Access the Windows 7/10 machine and on the command line
+				type "ipconfig" to verify the presence of the assigned IP address.
+				Note down these IP addresses.
+				On the KALI machine, enter the command "ping IP address
+				Windows 7/10" to verify that the response is positive and that we
+				are not experiencing packet loss in the response.
+				On the Windows 7/10 machine, type the command "ping IP
+				address Kali" verifying that the response is positive and that no
+				packets were lost in the response.
+				If all the responses are positive, we can start working on the next step. The
+				setup phase of our penetration testing lab is over.
+			</p>
+			<h2>
+				Chapter 11 Understanding Why You Need To Hack Your Own
+			</h2>
+			<p>
+				Systems
+				In order to catch a thief you have to put yourself in their shoes, to think like
+				one and that is the baseline for ethical hacking. You must know your enemy
+				otherwise you cannot possibly know how to fight back. Everything is
+				against security at the moment. The number of system exploits is growing
+				fast, as is the number of hackers, as well as their knowledge. The time will
+				soon be upon us when no system is left untouched so it is absolutely vital
+				that you learn how to protect your own systems. Don’t just think about the
+				normal exploits tha we all know about either – think things much deeper
+				than that. When you now how to hack, you know what the tricks are that a
+				hacker will use to get at you – and that means you know how to protect
+				yourself against them.
+				Hacking targets systems that are vulnerable, weak and unprotected. While
+				you may have a series of firewalls in place, encryption set up for all your
+				data and use VPN’s – Virtual Private Networks – these are merely creating
+				a false sense of security. These types of systems focus on the higher level
+				exploits, the viruses and the traffic that comes in through the firewalls,
+				without having any effect on how a hacker works. The ONLY way to
+				protect your system from attack is to find the weaknesses they will use and
+				secure them.
+				Hackers and crackers expand their knowledge and their skills on an almost
+				daily basis and you should be doing the same thing. You have to learn how
+				to think like they do and to work the way they do if you want to protect
+				your systems. You are the ethical hacker; you have to know what the
+				crackers are doing and you have to know how to stop them. You have to
+				know exactly what to look for and how to use what you find against them.
+				Now, let me get one thing straight – you do not have to go all out and
+				protect your systems from every single possible attack – you can’t. The
+				only way you are going to that is to turn off your computer, unplug it and
+				lock it away in a cupboard. That way, no one can touch your system, not
+				even you. That is not a very good way of approaching security though and
+				is not going to do any organization many favors. What is more important is
+				that you put security measures in place against the well-known exploits, the
+				more common known attacks
+			</p>
+			<h3>
+				
+			</h3>
+			<p>
+				It is virtually impossible to think about and anticipate all of the possible
+				forms of attack, all the flaws that might be in your system that leaves it
+				open. There is no way on earth that you can plan for all eventualities,
+				especially the ones we don’t know about. What you can do is do your best
+				to thwart the crackers. Test as many combinations as you can, test your
+				entire system as well as the individual parts of it – that way you have a
+				good chance of finding the exploits that will affect your whole system.
+				Don’t go too far with the ethical hacking though. There is little point in
+				beefing up your system against attacks that are highly unlikely to ever
+				happen. Your real goals should be:
+				To hack into your own systems in a way that is not
+				destructive
+				Find the vulnerabilities
+				Work out how they can be exploited and what they can do
+				Patch them and make your system more secure
+				Chapter 12 Linux Commands
+				But, first, let me show you some basic Linux commands that will be useful
+				to us later.
+				BASIC COMMANDS
+				These are the most common commands that you will probably use for your
+				routine tasks.
+				Command to execute: ls
+				Explanation: this command allows you to list the contents of files and/or
+				folders.
+				Command to execute: pwd
+			</p>
+
+		</div>
+	</body>
+</html>
